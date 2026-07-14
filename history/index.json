@@ -6,6 +6,12 @@
     "file": "history/data_2025-04.json"
   },
   {
+    "id": "data_2025-06",
+    "madName": "MAD_Actif_Juin 25.xLsx_20260714_082222",
+    "periode": "Juin 2025",
+    "file": "history/data_2025-06.json"
+  },
+  {
     "id": "data_2025-07",
     "madName": "MAD_Actif_Juillet 25_20260713_164247",
     "periode": "Juillet 2025",
