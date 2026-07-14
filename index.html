@@ -623,7 +623,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF0F4;color:var(--
         <div class="card-body"><div class="cw cw-lg"><canvas id="chartEvolution"></canvas></div></div>
       </div>
       <div class="card">
-        <div class="card-header"><div><div class="card-title">Répartition Jan 2026</div><div class="card-sub">Structure de la dette filtrée</div></div></div>
+        <div class="card-header"><div><div class="card-title">Répartition <span id="rep-donut-period">Jan 2026</span></div><div class="card-sub">Structure de la dette filtrée</div></div></div>
         <div class="card-body">
           <div class="cw" style="height:170px"><canvas id="chartDonut"></canvas></div>
           <div style="display:flex;gap:8px;justify-content:center;margin-top:6px;flex-wrap:wrap;font-size:10px" id="donutLegend">
@@ -636,7 +636,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF0F4;color:var(--
 
     <div class="g2">
       <div class="card">
-        <div class="card-header"><div><div class="card-title">Service de la Dette — Jan 2026</div><div class="card-sub">Principal + Intérêts — <span id="filter-label-service" style="color:var(--orange)">Toutes catégories</span></div></div></div>
+        <div class="card-header"><div><div class="card-title">Service de la Dette — <span id="svc-chart-period">Jan 2026</span></div><div class="card-sub">Principal + Intérêts — <span id="filter-label-service" style="color:var(--orange)">Toutes catégories</span></div></div></div>
         <div class="card-body"><div class="cw"><canvas id="chartService"></canvas></div></div>
       </div>
       <div class="card">
@@ -710,7 +710,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF0F4;color:var(--
     </div>
     <div class="g2">
       <div class="card">
-        <div class="card-header"><div><div class="card-title">Évolution Encours Extérieur par Créancier</div><div class="card-sub">2021–2025 — Graphique 2 — <span id="fl-ext-label" style="color:var(--orange)">Tous créanciers</span></div></div></div>
+        <div class="card-header"><div><div class="card-title">Évolution Encours Extérieur par Créancier</div><div class="card-sub">2021–2025 — Graphique 1 — <span id="fl-ext-label" style="color:var(--orange)">Tous créanciers</span></div></div></div>
         <div class="card-body"><div class="cw cw-lg"><canvas id="chartExtEvol"></canvas></div></div>
       </div>
       <div class="card">
@@ -722,13 +722,13 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF0F4;color:var(--
     </div>
     <div class="g2">
       <div class="card">
-        <div class="card-header"><div><div class="card-title">Service Dette Extérieure 2021–2025</div><div class="card-sub">Tableau 5 — <span id="fl-ext-svc-label" style="color:var(--orange)">Tous créanciers</span></div></div></div>
+        <div class="card-header"><div><div class="card-title">Service Dette Extérieure 2021–2025</div><div class="card-sub">Tableau — <span id="fl-ext-svc-label" style="color:var(--orange)">Tous créanciers</span></div></div></div>
         <div class="card-body"><div class="cw cw-lg"><canvas id="chartExtService"></canvas></div></div>
       </div>
       <div class="card">
-        <div class="card-header"><div><div class="card-title">Type de Taux</div><div class="card-sub">Graphique 5 — Fixe vs Variable</div></div></div>
+        <div class="card-header"><div><div class="card-title">Type de Taux</div><div class="card-sub">Graphique — Fixe vs Variable</div></div></div>
         <div class="card-body" style="display:flex;flex-direction:column;align-items:center;gap:8px;padding-top:16px">
-          <div style="height:160px;width:160px"><canvas id="chartTaux"></canvas></div>
+          <div style="height:160px;width:160px;position:relative"><canvas id="chartTaux"></canvas></div>
           <div style="display:flex;gap:16px;font-size:10px">
             <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;background:#2D6A27;border-radius:2px;display:inline-block"></span>Fixe 89,4%</span>
             <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;background:#E8701A;border-radius:2px;display:inline-block"></span>Variable 10,6%</span>
@@ -762,16 +762,16 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#EEF0F4;color:var(--
       </div>
     </div>
     <div class="card">
-      <div class="card-header"><div><div class="card-title">Service Dette Intérieure 2021–2025</div><div class="card-sub">Tableau 8 — en milliards de FCFA</div></div></div>
+      <div class="card-header"><div><div class="card-title">Service Dette Intérieure 2021–<span id="tbl8-title-year">2025</span></div><div class="card-sub">Tableau 8 — en milliards de FCFA</div></div></div>
       <div class="card-body" style="padding:0">
         <table class="tbl">
-          <thead><tr><th>Instrument</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th><th>Capital 2025</th><th>Intérêts 2025</th></tr></thead>
+          <thead><tr><th>Instrument</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th id="th-tbl8-year">2025</th><th id="th-tbl8-cap">Capital 2025</th><th id="th-tbl8-int">Intérêts 2025</th></tr></thead>
           <tbody>
-            <tr><td class="td-b">Bons du Trésor</td><td>412,3</td><td>347,6</td><td>278,6</td><td>796,5</td><td>1 400,2</td><td>1 325,5</td><td>74,6</td></tr>
-            <tr><td class="td-b">OAT Adjudication</td><td>188,5</td><td>570,9</td><td>618,4</td><td>635,4</td><td>944,5</td><td>761,7</td><td>182,8</td></tr>
-            <tr><td class="td-b">TPCI Syndication</td><td>550,0</td><td>897,9</td><td>971,0</td><td>1 023,5</td><td>1 109,1</td><td>801,0</td><td>308,1</td></tr>
-            <tr><td class="td-b">Autres emprunts</td><td>129,1</td><td>90,8</td><td>255,6</td><td>391,4</td><td>284,9</td><td>126,8</td><td>158,1</td></tr>
-            <tr style="background:var(--orange-bg)"><td class="td-b" style="color:var(--orange)">TOTAL</td><td><b>1 279,9</b></td><td><b>1 907,2</b></td><td><b>2 123,6</b></td><td><b>2 846,9</b></td><td><b>3 738,7</b></td><td><b>3 015,1</b></td><td><b>723,6</b></td></tr>
+            <tr><td class="td-b">Bons du Trésor</td><td>412,3</td><td>347,6</td><td>278,6</td><td>796,5</td><td id="tbl8-bt-year">1 400,2</td><td id="tbl8-bt-cap">1 325,5</td><td id="tbl8-bt-int">74,6</td></tr>
+            <tr><td class="td-b">OAT Adjudication</td><td>188,5</td><td>570,9</td><td>618,4</td><td>635,4</td><td id="tbl8-oat-year">944,5</td><td id="tbl8-oat-cap">761,7</td><td id="tbl8-oat-int">182,8</td></tr>
+            <tr><td class="td-b">TPCI Syndication</td><td>550,0</td><td>897,9</td><td>971,0</td><td>1 023,5</td><td id="tbl8-tpci-year">1 109,1</td><td id="tbl8-tpci-cap">801,0</td><td id="tbl8-tpci-int">308,1</td></tr>
+            <tr><td class="td-b">Autres emprunts</td><td>129,1</td><td>90,8</td><td>255,6</td><td>391,4</td><td id="tbl8-autres-year">284,9</td><td id="tbl8-autres-cap">126,8</td><td id="tbl8-autres-int">158,1</td></tr>
+            <tr style="background:var(--orange-bg)"><td class="td-b" style="color:var(--orange)">TOTAL</td><td><b>1 279,9</b></td><td><b>1 907,2</b></td><td><b>2 123,6</b></td><td><b>2 846,9</b></td><td><b id="tbl8-total-year">3 738,7</b></td><td><b id="tbl8-total-cap">3 015,1</b></td><td><b id="tbl8-total-int">723,6</b></td></tr>
           </tbody>
         </table>
       </div>
@@ -1225,6 +1225,37 @@ function calcTotals() {
 }
 
 function fmt(n){ return n ? n.toLocaleString('fr-FR',{minimumFractionDigits:1,maximumFractionDigits:1}) : '—'; }
+
+function currentServiceYear(){
+  const m = ((DATA.meta && DATA.meta.periode) || MAD_META.periode || '').match(/\d{4}/);
+  return m ? m[0] : '';
+}
+
+function updateTableau8Interieur() {
+  const svc = DATA.service || {};
+  const year = currentServiceYear();
+  const g = k => svc[k] || [0,0];
+  const rows = { bt:g('BT'), oat:g('OAT'), tpci:g('TPCI'), autres:g('AutresInt') };
+
+  const setC = (id,val) => { const el=document.getElementById(id); if(el) el.textContent = fmt(val); };
+  const setL = (id,txt) => { const el=document.getElementById(id); if(el) el.textContent = txt; };
+
+  setL('tbl8-title-year', year || '2025');
+  setL('th-tbl8-year', year || '—');
+  setL('th-tbl8-cap', 'Capital ' + (year || ''));
+  setL('th-tbl8-int', 'Intérêts ' + (year || ''));
+
+  let totCap = 0, totInt = 0;
+  Object.entries(rows).forEach(([key, [cap, intr]]) => {
+    setC('tbl8-'+key+'-year', cap + intr);
+    setC('tbl8-'+key+'-cap',  cap);
+    setC('tbl8-'+key+'-int',  intr);
+    totCap += cap; totInt += intr;
+  });
+  setC('tbl8-total-year', totCap + totInt);
+  setC('tbl8-total-cap',  totCap);
+  setC('tbl8-total-int',  totInt);
+}
 /* ─── V1 : recalcul dynamique des badges de pourcentage et des encours par catégorie.
    Base : DATA.encours complet (MAD courant), indépendamment des filtres actifs,
    afin que les parts structurelles restent toujours cohérentes avec le data.json. ─── */
@@ -1325,6 +1356,7 @@ function refreshAll() {
 
   // ── V1 : badges & valeurs recalculés dynamiquement depuis le MAD courant ──
   updateDynamicBadges();
+  updateTableau8Interieur();
 
   // MAJ MAD
   renderMADTable(enc);
@@ -1477,6 +1509,7 @@ function buildChartEvolution(enc) {
   const extKeys=['FMI','BM','BAD','BID','AutresMulti','AFD','KFW','EximbankChine','JICA','AutresBil','Eurobonds','Samourai','Commerciaux'];
   const hasInt = intKeys.some(k=>enc[k]);
   const hasExt = extKeys.some(k=>enc[k]);
+  const curLabel = (DATA.evolTotal && DATA.evolTotal.years && DATA.evolTotal.years[4]) || '2025';
 
   let ds = [];
   if(hasExt || !F.src.length || F.src.includes('ext')) {
@@ -1484,10 +1517,11 @@ function buildChartEvolution(enc) {
     ds.push({ label:'Dette Extérieure', data:[...evolExt.bilat.map((_,i)=>evolExt.bilat[i]+evolExt.multi[i]+evolExt.euro[i]+evolExt.comm[i]),hasExt?Object.entries(enc).filter(([k])=>extKeys.includes(k)).reduce((a,[,v])=>a+v,0):0], backgroundColor:C.blA, borderRadius:3 });
   }
   if(hasInt || !F.src.length || F.src.includes('int')) {
-    ds.push({ label:'Dette Intérieure', data:[7959.2,9705.3,10626.3,11457.7,12099.1,hasInt?Object.entries(enc).filter(([k])=>intKeys.includes(k)).reduce((a,[,v])=>a+v,0):0], backgroundColor:C.orA, borderRadius:3 });
+    const evolTotal = DATA.evolTotal;
+    ds.push({ label:'Dette Intérieure', data:[7959.2,9705.3,10626.3,11457.7,evolTotal.int[4],hasInt?Object.entries(enc).filter(([k])=>intKeys.includes(k)).reduce((a,[,v])=>a+v,0):0], backgroundColor:C.orA, borderRadius:3 });
   }
 
-  mkChart('chartEvolution',{type:'bar',data:{labels:['2021','2022','2023','2024','2025','Janv 2026'],datasets:ds},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},padding:8}}},scales:{x:{stacked:true,...gO},y:{stacked:true,...gO,ticks:{callback:v=>v.toLocaleString('fr-FR')+'Mrds',...gO.ticks}}}}});
+  mkChart('chartEvolution',{type:'bar',data:{labels:['2021','2022','2023','2024',curLabel,'Janv 2026'],datasets:ds},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},padding:8}}},scales:{x:{stacked:true,...gO},y:{stacked:true,...gO,ticks:{callback:v=>v.toLocaleString('fr-FR')+'Mrds',...gO.ticks}}}}});
 }
 
 function buildChartDonut(tots) {
@@ -1560,17 +1594,29 @@ function buildChartIntRep(enc) {
 }
 
 function buildChartIntEvol() {
-  mkChart('chartIntEvol',{type:'bar',data:{labels:['2021','2022','2023','2024','2025'],datasets:[{label:'BCEAO',data:[870.7,870.7,870.7,870.7,858.2],backgroundColor:C.goA,borderRadius:2},{label:'Banques&Assimilés',data:[369.4,523.9,459.7,282.3,125.2],backgroundColor:C.rd+'BB',borderRadius:2},{label:'Titres Publics',data:[6699.8,8288.7,9278.7,10294.0,11110.3],backgroundColor:C.orA,borderRadius:2},{label:'Autres',data:[19.3,22.1,17.1,10.7,5.4],backgroundColor:C.go+'77',borderRadius:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10}}}},scales:{x:{stacked:true,...gO},y:{stacked:true,...gO,ticks:{callback:v=>v.toLocaleString('fr-FR'),...gO.ticks}}}}});
+  const d = DATA.evolInt;
+  mkChart('chartIntEvol',{type:'bar',data:{labels:d.years,datasets:[
+    {label:'BCEAO',data:d.bceao,backgroundColor:C.goA,borderRadius:2},
+    {label:'Banques&Assimilés',data:d.banques,backgroundColor:C.rd+'BB',borderRadius:2},
+    {label:'Titres Publics',data:d.titres,backgroundColor:C.orA,borderRadius:2},
+    {label:'Autres',data:d.autres,backgroundColor:C.go+'77',borderRadius:2}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10}}}},scales:{x:{stacked:true,...gO},y:{stacked:true,...gO,ticks:{callback:v=>v.toLocaleString('fr-FR'),...gO.ticks}}}}});
 }
 
 function buildChartExtService() {
-  let ds=[{cat:'Bilatéral',label:'Bilatéraux',data:[63.1,92.0,132.6,188.3,225.2],backgroundColor:C.grA,borderRadius:2},{cat:'Multilatéral',label:'Multilatéraux',data:[194.4,220.3,392.5,582.2,552.9],backgroundColor:C.blA,borderRadius:2},{cat:'Titres Internationaux',label:'Porteurs Titres',data:[302.1,331.4,328.8,381.4,452.8],backgroundColor:C.orA,borderRadius:2},{cat:null,label:'Autres',data:[288.2,467.4,701.9,1207.2,1485.3],backgroundColor:C.rd+'BB',borderRadius:2}];
+  const year = currentServiceYear() || '2025';
+  const svcSum = keys => keys.reduce((a,k)=>{ const v=DATA.service[k]||[0,0]; return a+v[0]+v[1]; },0);
+  const curBilat  = Math.round(svcSum(['AFD','KFW','EximbankChine','JICA','AutresBil'])*10)/10;
+  const curMulti  = Math.round(svcSum(['FMI','BM','BAD','BID','AutresMulti'])*10)/10;
+  const curTitres = Math.round(svcSum(['Eurobonds','Samourai'])*10)/10;
+  const curAutres = Math.round(svcSum(['Commerciaux'])*10)/10;
+  let ds=[{cat:'Bilatéral',label:'Bilatéraux',data:[63.1,92.0,132.6,188.3,curBilat],backgroundColor:C.grA,borderRadius:2},{cat:'Multilatéral',label:'Multilatéraux',data:[194.4,220.3,392.5,582.2,curMulti],backgroundColor:C.blA,borderRadius:2},{cat:'Titres Internationaux',label:'Porteurs Titres',data:[302.1,331.4,328.8,381.4,curTitres],backgroundColor:C.orA,borderRadius:2},{cat:null,label:'Autres',data:[288.2,467.4,701.9,1207.2,curAutres],backgroundColor:C.rd+'BB',borderRadius:2}];
   if(F.creancier.length) ds=ds.filter(x=>x.cat && F.creancier.includes(x.cat));
-  mkChart('chartExtService',{type:'bar',data:{labels:['2021','2022','2023','2024','2025'],datasets:ds},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10}}}},scales:{x:{stacked:true,...gO},y:{stacked:true,...gO,ticks:{callback:v=>v.toLocaleString('fr-FR'),...gO.ticks}}}}});
+  mkChart('chartExtService',{type:'bar',data:{labels:['2021','2022','2023','2024',year],datasets:ds},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10}}}},scales:{x:{stacked:true,...gO},y:{stacked:true,...gO,ticks:{callback:v=>v.toLocaleString('fr-FR'),...gO.ticks}}}}});
 }
 
 function buildChartTaux() {
-  mkChart('chartTaux',{type:'doughnut',data:{labels:['Taux Fixe 89,4%','Taux Variable 10,6%'],datasets:[{data:[89.4,10.6],backgroundColor:[C.gr,C.or],borderWidth:3,borderColor:'#fff',hoverOffset:6}]},options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{display:false}}}});
+  mkChart('chartTaux',{type:'doughnut',data:{labels:['Taux Fixe 89,4%','Taux Variable 10,6%'],datasets:[{data:[89.4,10.6],backgroundColor:[C.gr,C.or],borderWidth:3,borderColor:'#fff',hoverOffset:6}]},options:{responsive:true,maintainAspectRatio:false,aspectRatio:1,cutout:'60%',plugins:{legend:{display:false}}}});
 }
 
 function buildChartRatioPIB() {
@@ -1654,13 +1700,16 @@ function updateMadLabels() {
   const fs = document.getElementById('footer-mad-source');
   if (fs) fs.textContent = badgeTxt;
   document.title = 'DGF — Suivi Dette — ' + badgeTxt;
+  const periodTxt = MAD_META.periode || '';
+  const rd = document.getElementById('rep-donut-period'); if (rd) rd.textContent = periodTxt;
+  const sd = document.getElementById('svc-chart-period');  if (sd) sd.textContent = periodTxt;
 }
 
 /* Injecte un jeu de données (format data.json) dans DATA + MAD_META.
    Remplace entièrement chaque bloc présent (pas de fusion partielle) afin
    qu'un MAD historique n'hérite jamais d'une valeur d'un autre MAD. */
 function applyDataJson(j) {
-  ['encours','service','mobilisations','devise','evolExt','evolTotal'].forEach(k => {
+  ['encours','service','mobilisations','devise','evolExt','evolTotal','evolInt'].forEach(k => {
     if (j[k] && typeof j[k] === 'object') {
       if (Array.isArray(j[k])) { DATA[k] = j[k]; return; }
       const cleaned = {};
