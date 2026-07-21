@@ -52,5 +52,11 @@
     "madName": "MAD1125",
     "periode": "Novembre 2025",
     "file": "history/data_2025-11.json"
+  },
+  {
+    "id": "data_2025-12",
+    "madName": "MAD1225",
+    "periode": "Décembre 2025",
+    "file": "history/data_2025-12.json"
   }
 ]
