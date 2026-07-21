@@ -6,6 +6,12 @@
     "file": "history/data_2022-12.json"
   },
   {
+    "id": "data_2023-12",
+    "madName": "MAD1223",
+    "periode": "Décembre 2023",
+    "file": "history/data_2023-12.json"
+  },
+  {
     "id": "data_2025-03",
     "madName": "MAD0325",
     "periode": "Mars 2025",
